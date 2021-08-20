@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="cquirosb"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-19 06:29:23 p. m."/>
+        <attribute name="created" value="Y3F1aXJvc2I7REVMTDUwMDc4MzYzOzIwMjEtMDgtMTU7MDc6MzI6MDAgcC4gbS47MzA0MA=="/>
+        <attribute name="edited" value="Y3F1aXJvc2I7REVMTDUwMDc4MzYzOzIwMjEtMDgtMTU7MDk6MzA6NDEgcC4gbS47MTszMTUz"/>
+        <attribute name="edited" value="a2hyaXo7Q0hSSVMtTEFQVE9QOzIwMjEtMDgtMTk7MDY6Mjk6MjMgcC4gbS47MzszMDI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="C&#225;lculo del &#225;rea de un trapezoide.&#13;&#10;&#13;&#10;Algoritmo que calcula el &#225;rea de un trapezoide utilizando la f&#243;rmula de la tarea, adem&#225;s de preguntar al usuario si la unidad de medida de los &#225;ngulos es en radianes o en grados, para luego hacer la conversi&#243;n correspondiente.&#13;&#10;&#13;&#10;Entradas y restricciones:&#13;&#10;-&#9;a, b, c, d: son los valores de los lados del trapezoide, reales positivos.&#13;&#10;-&#9;alfa, gamma: son los valores de los &#225;ngulos, reales positivos.&#13;&#10;- pregunta: Es la valor de la respuesta, string.&#13;&#10;Salida:&#13;&#10;-&#9;e: El &#225;rea del trapezoide.&#13;&#10;&#13;&#10;Elaborado por Cristofer Quir&#243;s&#13;&#10;"/>
+            <declare name="a, b, c, d, e, alfa, gamma" type="Real" array="False" size=""/>
+            <declare name="pregunta" type="String" array="False" size=""/>
+            <output expression="&quot;Ingrese el valor del lado a:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Ingrese el valor del lado b:&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Ingrese el valor del lado c:&quot;" newline="True"/>
+            <input variable="c"/>
+            <output expression="&quot;Ingrese el valor del lado d:&quot;" newline="True"/>
+            <input variable="d"/>
+            <output expression="&quot;&#191;La unidad de medida de los &#225;ngulos son en radianes? (Si / No)&quot;" newline="True"/>
+            <input variable="pregunta"/>
+            <if expression="pregunta == &quot;Si&quot; or pregunta == &quot;si&quot;">
+                <then>
+                    <output expression="&quot;Ingrese el valor del &#225;ngulo alfa en radianes:&quot;" newline="True"/>
+                    <input variable="alfa"/>
+                    <output expression="&quot;Ingrese el valor del &#225;ngulo gamma en radianes:&quot;" newline="True"/>
+                    <input variable="gamma"/>
+                </then>
+                <else>
+                    <output expression="&quot;Ingrese el valor del &#225;ngulo alfa en grados:&quot;" newline="True"/>
+                    <input variable="alfa"/>
+                    <assign variable="alfa" expression="alfa*&#960;/180"/>
+                    <output expression="&quot;Ingrese el valor del &#225;ngulo gamma en grados:&quot;" newline="True"/>
+                    <input variable="gamma"/>
+                    <assign variable="gamma" expression="gamma*&#960;/180"/>
+                </else>
+            </if>
+            <assign variable="e" expression="(a*d*sin(alfa)+b*c*sin(gamma))/2"/>
+            <output expression="&quot;El &#225;rea del trapezoide es:&quot; &amp; e" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
